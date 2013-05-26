@@ -1,0 +1,4 @@
+#!/bin/bash
+
+gcc -pthread -o server-test systemhelpers.c linked_queue.c string_node.c pi_server.c pi_server_test.c
+gcc -pthread -o client-test systemhelpers.c linked_queue.c string_node.c pi_client.c pi_client_test.c
