@@ -36,7 +36,7 @@ void * run_server_args(void * port_number) {
 	if (!port_number)
 		port = LISTEN_PORT_NUM;
 	else
-		port = *port_number;
+		port = *(int *) port_number;
 
 	if (port <= 1024)
 		port = LISTEN_PORT_NUM;

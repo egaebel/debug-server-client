@@ -31,7 +31,7 @@ typedef struct {
 typedef void (*sa_sigaction_t)(int signum, siginfo_t * info, void * stuff);
 
 //Function Prototypes
-void * run_server_args(int * port_number);
+void * run_server_args(void * port_number);
 void * run_server();
 void add_message(char * message, int message_length);
 
