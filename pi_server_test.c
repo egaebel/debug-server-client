@@ -24,15 +24,16 @@ int main (int argc, char * argv[]) {
 
 	int portnum;
 	if (argc == 1) {
-	
-		portnum = 19484;
+		
+		portnum = 55000;
 	}
 	else if (argc == 2) {
 	
 		portnum = atoi(argv[1]);
 	}
 
-	if (pthread_create(&server_thread, 0, run_server, (void *) &portnum) != 0)
+	printf("Running the server on port: %d\n", portnum);
+	if (pthread_create(&server_thread, 0, run_server_args, (void *) &portnum) != 0)
 		return -1;
 
 	if (pthread_create(&msg_thread, 0, add_test_messages, (void *) NULL) != 0)
