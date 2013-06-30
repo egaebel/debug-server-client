@@ -2,8 +2,8 @@
 
 //Constants
 static const int MAX_BUF_LENGTH = 8192;
-static const int SERVER_PORT_NUM = 19484;
-static const char * STR_SERVER_PORT_NUM = "19484";
+static const int SERVER_PORT_NUM = 55000;
+static const char * STR_SERVER_PORT_NUM = "55000";
 static char * SERVER_IP = "127.0.0.1";
 
 //Variables
@@ -59,26 +59,10 @@ bool is_client_init() {
 /* Starts the client with default values. 
  * Returns a number > 0 on success, -1 on fail.
  */
-void * run_client(int argc, char * argv[]){
+void * run_client(){
 
-	int port;
-	char * server;
-		
-	if (argc == 2) {
-	
-		server = argv[0];
-		port = atoi(argv[1]);
-	}
-	//1 argument is for server ip
-	else if (argc == 1) {
-		
-		server = argv[0]	
-	}
-	else {
-
-		port = SERVER_PORT_NUM;
-		server = SERVER_IP;
-	}
+	int port = SERVER_PORT_NUM;
+	char * server = SERVER_IP;
 
 	server_sock = init_client(server, port);
 
@@ -89,7 +73,7 @@ void * run_client(int argc, char * argv[]){
 /* Starts the client with passed values.
  * Returns a number > 0 on success, -1 on fail.
  */
-void * run_client_args(int port, char * server) {
+void * run_client_args(char * server, int port) {
 
 	server_sock = init_client(server, port);
 

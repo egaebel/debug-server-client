@@ -17,12 +17,20 @@ void * add_test_messages() {
 	return NULL;
 }
 
-int main () {
+int main (int argc, char * argv[]) {
 
 	pthread_t server_thread;
 	pthread_t msg_thread;
 
-	int portnum = 19484;
+	int portnum;
+	if (argc == 1) {
+	
+		portnum = 19484;
+	}
+	else if (argc == 2) {
+	
+		portnum = argv[1];
+	}
 
 	if (pthread_create(&server_thread, 0, run_server, (void *) &portnum) != 0)
 		return -1;
