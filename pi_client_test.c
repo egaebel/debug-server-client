@@ -11,6 +11,7 @@ int main(int argc, char * argv[]) {
 	else {
 
 		printf("Running client on default server settings!\n");
+		run_client();
 	}
 	print_from_server();
 	return 1;

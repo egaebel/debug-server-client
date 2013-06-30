@@ -4,7 +4,7 @@
 #include "pi_server.h"
 
 //Constants
-static const int LISTEN_PORT_NUM = 19484;
+static const int LISTEN_PORT_NUM = 55000;
 static const int QUEUE_LENGTH = 1024;
 static const int MAX_LENGTH = 8192;
 static const int MAX_BUF = 8192;

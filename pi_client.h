@@ -8,7 +8,7 @@
 #include <netdb.h>
 
 void * run_client ();
-void * run_client_args(int port, char * server);
+void * run_client_args(char * server, int port);
 int print_from_server();
 
 #endif

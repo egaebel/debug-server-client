@@ -29,7 +29,7 @@ int main (int argc, char * argv[]) {
 	}
 	else if (argc == 2) {
 	
-		portnum = argv[1];
+		portnum = atoi(argv[1]);
 	}
 
 	if (pthread_create(&server_thread, 0, run_server, (void *) &portnum) != 0)
