@@ -29,7 +29,7 @@ void add_message(char * message, int message_length) {
 }
 
 /* main function */
-void * run_server_args(int * port_number) {
+void * run_server_args(void * port_number) {
 
 	int port;
 
