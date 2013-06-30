@@ -59,10 +59,26 @@ bool is_client_init() {
 /* Starts the client with default values. 
  * Returns a number > 0 on success, -1 on fail.
  */
-void * run_client(){
+void * run_client(int argc, char * argv[]){
 
-	int port = SERVER_PORT_NUM;
-	char * server = SERVER_IP;
+	int port;
+	char * server;
+		
+	if (argc == 2) {
+	
+		server = argv[0];
+		port = atoi(argv[1]);
+	}
+	//1 argument is for server ip
+	else if (argc == 1) {
+		
+		server = argv[0]	
+	}
+	else {
+
+		port = SERVER_PORT_NUM;
+		server = SERVER_IP;
+	}
 
 	server_sock = init_client(server, port);
 
